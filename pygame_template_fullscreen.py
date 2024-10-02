@@ -3,7 +3,7 @@
 import pygame
 pygame.init()
 # Crear la ventana y poner el tamaño.
-screen = pygame.display.set_mode((640, 360))
+screen = pygame.display.set_mode((1366, 768), pygame.FULLSCREEN)
 # Poner el título de la ventana.
 pygame.display.set_caption("PES 2024")
 # definir un icono y agregarlo a la ventana
@@ -25,9 +25,10 @@ while not salir:
         # Si se cierra la ventana se sale del programa.
         if event.type == pygame.QUIT:
             # Si se pulsa la tecla [Esc] se sale del programa.
-            if event.type == pygame.KEYUP:
-                if event.key == pygame.K_ESCAPE:
-                    salir = True
+            salir = True
+        if event.type ==  pygame.KEYUP:
+            if event.key == pygame.K_ESCAPE:
+                 salir = True
     # Actualizar la pantalla.
     screen.blit(imgBackground, (0, 0))
     pygame.display.flip()
